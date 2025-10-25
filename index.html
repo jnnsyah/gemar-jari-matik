@@ -15,73 +15,63 @@
 
     <!-- Konfigurasi Tailwind untuk warna kustom -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#667eea', // Warna Primer (Indigo/Violet)
-                        'secondary': '#00ff00', // Warna Sekunder (Hijau Terang)
-                        'accent': '#ffff00', // Warna Aksen (Kuning Terang)
-                        'brand-dark': '#3a53c0', // Primary Darker shade
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'primary': '#6366f1', // indigo-500
+                    'secondary': '#22c55e', // green-500 (lebih lembut)
+                    'accent': '#facc15', // yellow-400
+                    'brand-dark': '#4338ca', // indigo-700
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                boxShadow: {
+                    fun: '8px 8px 0 rgba(99,102,241,0.6)',
                 }
             }
         }
-    </script>
-    <!-- Custom CSS untuk style Playful & Fun, Bayangan Khas, dan Animasi -->
-    <style>
-        /* Base styles for the playful card effect */
-        .card-fun {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 8px 8px 0px rgba(102, 126, 234, 0.7); /* Efek bayangan playful dari Warna Primer */
-            border: 2px solid #3a53c0;
-        }
-        .card-fun:hover {
-            transform: translateY(-5px);
-            box-shadow: 12px 12px 0px rgba(102, 126, 234, 0.9);
-        }
-        /* Style for big headlines */
-        .text-shadow-fun {
-            text-shadow: 4px 4px 0px #00ff00; /* Shadow dari Warna Sekunder */
-        }
-        /* Style for main CTA buttons */
-        .cta-button {
-            transition: all 0.3s ease-in-out;
-            box-shadow: 4px 4px 0px #3a53c0;
-        }
-        .cta-button:hover {
-            box-shadow: 6px 6px 0px #3a53c0;
-            transform: translate(-2px, -2px);
-        }
-        /* Floating Live Chat Animation */
-        .live-chat-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        /* Custom scroll-snap for smoother single-page navigation */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    }
+</script>
+
+<style>
+    .card-fun {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 6px 6px 0 rgba(99,102,241,0.5);
+        border: 1.5px solid #4338ca;
+        background-color: white;
+    }
+    .card-fun:hover {
+        transform: translateY(-6px);
+        box-shadow: 10px 10px 0 rgba(99,102,241,0.7);
+    }
+    .text-shadow-fun {
+        text-shadow: 3px 3px 0 #22c55e;
+    }
+    .cta-button {
+        transition: all 0.25s ease;
+        box-shadow: 4px 4px 0 #4338ca;
+    }
+    .cta-button:hover {
+        transform: translate(-2px, -2px);
+        filter: brightness(110%);
+    }
+    .live-chat-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    html { scroll-behavior: smooth; }
+</style>
 </head>
 <body class="font-sans antialiased bg-gray-50 text-gray-800">
 
