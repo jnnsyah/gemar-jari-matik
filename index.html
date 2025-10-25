@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Gemari Jari Matik - Matematika Mudah dengan Gemari</title>
+    <meta name="description" content="Metode berhitung inovatif untuk siswa SD. Matematika Mudah dengan Gemari Jari Matik.">
+    <meta name="keywords" content="Matematika, SD, Sekolah Dasar, Gemari Jari Matik, Course Online">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Konfigurasi Tailwind untuk warna kustom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#667eea', // Warna Primer (Indigo/Violet)
+                        'secondary': '#00ff00', // Warna Sekunder (Hijau Terang)
+                        'accent': '#ffff00', // Warna Aksen (Kuning Terang)
+                        'brand-dark': '#3a53c0', // Primary Darker shade
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS untuk style Playful & Fun, Bayangan Khas, dan Animasi -->
+    <style>
+        /* Base styles for the playful card effect */
+        .card-fun {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 8px 8px 0px rgba(102, 126, 234, 0.7); /* Efek bayangan playful dari Warna Primer */
+            border: 2px solid #3a53c0;
+        }
+        .card-fun:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 0px rgba(102, 126, 234, 0.9);
+        }
+        /* Style for big headlines */
+        .text-shadow-fun {
+            text-shadow: 4px 4px 0px #00ff00; /* Shadow dari Warna Sekunder */
+        }
+        /* Style for main CTA buttons */
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 4px 4px 0px #3a53c0;
+        }
+        .cta-button:hover {
+            box-shadow: 6px 6px 0px #3a53c0;
+            transform: translate(-2px, -2px);
+        }
+        /* Floating Live Chat Animation */
+        .live-chat-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* Custom scroll-snap for smoother single-page navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-50 text-gray-800">
+
+    <!-- Floating Live Chat (Placeholder) -->
+    <div class="live-chat-float bg-secondary p-4 rounded-full text-brand-dark hover:bg-green-400">
+        <!-- Chat Icon (Envelope for email/contact) -->
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+    </div>
+
+    <!-- Navbar -->
+    <header class="bg-white sticky top-0 z-50 shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Nama Bisnis -->
+            <a href="#home" class="text-3xl font-extrabold text-primary flex items-center">
+                <!-- Simple "Hand" Icon Placeholder -->
+                <svg class="w-8 h-8 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 00-8 8c0 1.95.84 3.73 2.19 5.01L10 20l5.81-4.99A8 8 0 0018 10a8 8 0 00-8-8zm0 14.5c-1.34 0-2.58-.56-3.47-1.5L10 14.5l3.47 1.5c-.89.94-2.13 1.5-3.47 1.5z"/></svg>
+                Gemari <span class="text-brand-dark ml-1">Matik</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="text-gray-700 hover:text-primary font-semibold transition duration-150">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-semibold transition duration-150">Tentang Kami</a>
+                <a href="#produk" class="text-gray-700 hover:text-primary font-semibold transition duration-150">Produk</a>
+                <a href="#blog" class="text-gray-700 hover:text-primary font-semibold transition duration-150">Blog</a>
+                <a href="#faq" class="text-gray-700 hover:text-primary font-semibold transition duration-150">FAQ</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-semibold transition duration-150">Kontak</a>
+                <!-- Multi Bahasa Placeholder -->
+                <button class="text-sm font-medium border border-gray-300 rounded-full px-3 py-1 hover:bg-gray-100">ID / EN</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 text-primary focus:outline-none rounded-lg hover:bg-gray-100">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl border-t border-gray-100">
+            <a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-primary transition" onclick="document.getElementById('mobile-menu-button').click()">Home</a>
+            <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-primary transition" onclick="document.getElementById('mobile-menu-button').click()">Tentang Kami</a>
+            <a href="#produk" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-primary transition" onclick="document.getElementById('mobile-menu-button').click()">Produk</a>
+            <a href="#blog" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-primary transition" onclick="document.getElementById('mobile-menu-button').click()">Blog</a>
+            <a href="#faq" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-primary transition" onclick="document.getElementById('mobile-menu-button').click()">FAQ</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-700 hover:bg-indigo-50 hover:text-primary transition" onclick="document.getElementById('mobile-menu-button').click()">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Homepage Section (Hero) -->
+        <section id="home" class="py-20 md:py-36 bg-primary bg-opacity-95 text-white overflow-hidden relative">
+            <!-- Playful Background Patterns -->
+            <div class="absolute inset-0 bg-secondary opacity-5 transform skew-y-3 -translate-y-16"></div>
+            <div class="absolute inset-0 bg-accent opacity-10 transform -skew-y-6 translate-y-32"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center gap-10">
+                <!-- Hero Text -->
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-shadow-fun">
+                        Matematika <span class="text-accent">Mudah</span> dengan <span class="text-secondary">Gemari</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 font-medium max-w-lg md:max-w-none">
+                        Metode berhitung inovatif yang membuat Siswa Sekolah Dasar <span class="font-bold text-accent">JADI CINTA</span> pada angka!
+                    </p>
+                    <a href="#produk" class="inline-block cta-button bg-accent text-primary font-bold py-3 px-10 rounded-xl text-lg hover:bg-yellow-300 transition duration-300 transform shadow-lg shadow-brand-dark/50">
+                        Daftar & Raih Juara!
+                    </a>
+                </div>
+                <!-- Hero Image Placeholder (Conceptual & Dynamic) -->
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <div class="bg-white p-8 rounded-3xl shadow-2xl card-fun transform rotate-2 max-w-md mx-auto">
+                        <div class="h-64 bg-indigo-200 rounded-xl flex items-center justify-center border-4 border-secondary border-dashed">
+                            <span class="text-2xl text-primary font-black">Ilustrasi Jari Tangan Berhitung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 md:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-primary">Mengapa Gemari Jari Matik?</h2>
+                <p class="text-xl text-gray-600 mb-12 max-w-4xl mx-auto">
+                    Kami memanfaatkan koordinasi motorik halus untuk melatih kecepatan, ketepatan, dan daya ingat berhitung secara alami.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="p-6 bg-yellow-100 rounded-2xl card-fun hover:bg-yellow-200">
+                        <div class="text-5xl mb-4 text-accent">🚀</div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Berhitung Cepat</h3>
+                        <p class="text-gray-600">Menguasai operasi matematika dasar dengan kecepatan tinggi, mengalahkan kalkulator!</p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="p-6 bg-green-100 rounded-2xl card-fun hover:bg-green-200">
+                        <div class="text-5xl mb-4 text-secondary">🧠</div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Keterampilan Kognitif</h3>
+                        <p class="text-gray-600">Melatih daya ingat dan konsentrasi melalui visualisasi gerakan jari.</p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="p-6 bg-indigo-100 rounded-2xl card-fun hover:bg-indigo-200">
+                        <div class="text-5xl mb-4 text-primary">🎉</div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Belajar Interaktif</h3>
+                        <p class="text-gray-600">Sesi online via Zoom/Meet yang interaktif, jauh dari rasa bosan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produk/Layanan Section (Katalog Produk & Search/Filter) -->
+        <section id="produk" class="py-16 md:py-28 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-primary">Katalog Kelas Seru Gemari</h2>
+                    <p class="text-xl text-gray-600">Pilih program yang akan membuka potensi matematika si kecil.</p>
+                    <!-- Search & Filter Placeholder -->
+                    <div class="mt-6 flex flex-col md:flex-row gap-4 justify-center items-center">
+                        <input type="text" placeholder="Cari Kelas (Filter Placeholder)..." class="p-3 border-2 border-primary rounded-xl w-full md:w-1/3 shadow-md focus:ring-primary focus:border-primary transition duration-150 font-medium">
+                        <select class="p-3 border-2 border-primary rounded-xl shadow-md w-full md:w-1/4 bg-white focus:ring-primary focus:border-primary transition font-medium">
+                            <option>Semua Level</option>
+                            <option>Level Dasar</option>
+                            <option>Level Mahir</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white p-6 rounded-2xl card-fun shadow-lg flex flex-col items-center text-center border-secondary">
+                        <span class="text-5xl mb-4 p-3 bg-primary text-accent rounded-full border-4 border-accent">⭐</span>
+                        <h3 class="text-2xl font-bold mb-2 text-primary">Level Dasar (SD Kelas 1-2)</h3>
+                        <p class="text-gray-600 mb-4">Penguasaan bilangan, teknik tambah dan kurang 1 digit, dan pengenalan jari matik.</p>
+                        <p class="text-4xl font-black text-secondary mb-4">Rp 499.000</p>
+                        <!-- Review & Rating Placeholder -->
+                        <div class="text-sm text-gray-500 mb-3">
+                            <span class="font-bold text-accent">4.8/5.0</span> (120 Ulasan)
+                        </div>
+                        <!-- Payment Gateway Placeholder -->
+                        <button class="cta-button bg-primary text-white font-semibold py-3 px-8 rounded-xl hover:bg-brand-dark w-full">
+                            Daftar Kelas (GoPay, Transfer, CC)
+                        </button>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="bg-white p-6 rounded-2xl card-fun shadow-lg flex flex-col items-center text-center border-primary">
+                        <span class="text-5xl mb-4 p-3 bg-secondary text-primary rounded-full border-4 border-primary">🚀</span>
+                        <h3 class="text-2xl font-bold mb-2 text-primary">Level Mahir (SD Kelas 3-6)</h3>
+                        <p class="text-gray-600 mb-4">Pengembangan teknik hingga puluhan, perkalian, dan pembagian cepat.</p>
+                        <p class="text-4xl font-black text-primary mb-4">Rp 799.000</p>
+                        <div class="text-sm text-gray-500 mb-3">
+                            <span class="font-bold text-accent">5.0/5.0</span> (85 Ulasan Terbaik)
+                        </div>
+                        <button class="cta-button bg-primary text-white font-semibold py-3 px-8 rounded-xl hover:bg-brand-dark w-full">
+                            Daftar Kelas (GoPay, Transfer, CC)
+                        </button>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="bg-white p-6 rounded-2xl card-fun shadow-lg flex flex-col items-center text-center border-accent">
+                        <span class="text-5xl mb-4 p-3 bg-accent text-brand-dark rounded-full border-4 border-secondary">🏆</span>
+                        <h3 class="text-2xl font-bold mb-2 text-primary">Paket Super Genius</h3>
+                        <p class="text-gray-600 mb-4">Akses penuh Level Dasar & Mahir, konsultasi privat, dan modul eksklusif.</p>
+                        <p class="text-4xl font-black text-brand-dark mb-4">Rp 1.199.000</p>
+                        <div class="text-sm text-gray-500 mb-3">
+                            <span class="font-bold text-accent">4.7/5.0</span> (210 Ulasan)
+                        </div>
+                        <button class="cta-button bg-primary text-white font-semibold py-3 px-8 rounded-xl hover:bg-brand-dark w-full">
+                            Daftar Kelas (GoPay, Transfer, CC)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Review & Rating/Testimonial Section -->
+        <section class="py-16 md:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 text-primary">Testimonial Orang Tua Hebat</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-indigo-50 p-6 rounded-2xl shadow-xl card-fun transform -rotate-1 hover:rotate-0">
+                        <p class="text-3xl mb-4 text-accent">⭐⭐⭐⭐⭐</p>
+                        <p class="italic text-gray-700 mb-4">"Ajaib! Anak saya yang dulunya takut angka kini selalu minta sesi Gemari. Metode yang benar-benar mengubah persepsi belajar matematika."</p>
+                        <p class="font-bold text-primary">- Ibu Siti (Wali Murid Kelas 3 SD)</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-green-50 p-6 rounded-2xl shadow-xl card-fun transform rotate-2 hover:rotate-0">
+                        <p class="text-3xl mb-4 text-accent">⭐⭐⭐⭐⭐</p>
+                        <p class="italic text-gray-700 mb-4">"Konsepnya mudah dicerna, dan yang paling penting, anak saya senang! Nilai raporku sekarang jauh lebih baik, terima kasih Gemari!"</p>
+                        <p class="font-bold text-primary">- Bima (Siswa Kelas 4 SD)</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-yellow-50 p-6 rounded-2xl shadow-xl card-fun transform -rotate-1 hover:rotate-0">
+                        <p class="text-3xl mb-4 text-accent">⭐⭐⭐⭐</p>
+                        <p class="italic text-gray-700 mb-4">"Pembelajaran online yang efektif. Salut untuk para mentor yang sabar dan kreatif. Metode jarinya sangat intuitif."</p>
+                        <p class="font-bold text-primary">- Ayah Riko (Wali Murid Kelas 2 SD)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog/News Section (Content Placeholder) -->
+        <section id="blog" class="py-16 md:py-28 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-primary">Berita & Tips Belajar (Blog)</h2>
+                    <p class="text-xl text-gray-600">Jelajahi artikel edukatif untuk mendukung proses belajar anak di rumah.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Blog Card 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-fun">
+                        <div class="h-48 bg-primary/20 flex items-center justify-center text-primary font-semibold">
+                            
+                        </div>
+                        <div class="p-6">
+                            <span class="text-sm font-medium text-secondary">METODE</span>
+                            <h3 class="text-xl font-bold mb-2 text-primary mt-1">Mengapa Jari Tangan adalah Alat Berhitung Terbaik</h3>
+                            <p class="text-gray-600 text-sm line-clamp-3">Memahami korelasi antara gerakan motorik halus dan penguasaan bilangan pada usia emas anak.</p>
+                            <a href="#" class="mt-3 inline-block text-primary font-bold hover:underline">Baca &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Blog Card 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-fun">
+                        <div class="h-48 bg-secondary/20 flex items-center justify-center text-primary font-semibold">
+                            
+                        </div>
+                        <div class="p-6">
+                           
